@@ -5,7 +5,7 @@
 class Router {
     /**
      * Mengatur rute dengan menambahkan properti tambahan pada objek rute.
-     * 
+     *
      * @private
      * @param {Array<Object>} routes - Daftar rute yang akan diatur.
      * @param {Object|null} [parent=null] - Rute induk jika ada, null jika tidak ada.
@@ -30,7 +30,7 @@ class Router {
 
     /**
      * Mendapatkan path dari URL saat ini.
-     * 
+     *
      * @returns {string} Path dari URL saat ini.
      */
     static get path() {
@@ -39,7 +39,7 @@ class Router {
 
     /**
      * Mendapatkan rute yang sesuai dengan path saat ini.
-     * 
+     *
      * @private
      * @returns {Object|null} Rute yang cocok atau null jika tidak ditemukan.
      */
@@ -55,7 +55,7 @@ class Router {
 
     /**
      * Mendapatkan seluruh jalur dari rute yang dipilih hingga induknya.
-     * 
+     *
      * @private
      * @param {Object} route - Rute yang ingin diperiksa.
      * @returns {Array<Object>} Daftar rute dari yang dipilih hingga induknya.
@@ -74,7 +74,7 @@ class Router {
 
     /**
      * Mendapatkan query parameters dari URL.
-     * 
+     *
      * @returns {Object} Objek yang merepresentasikan pasangan key-value query parameters.
      */
     static get query() {
@@ -95,7 +95,7 @@ class Router {
 
     /**
      * Menangani proses load halaman dan menavigasi ke rute yang sesuai.
-     * 
+     *
      * @private
      * @returns {Promise<void>} Proses asinkron untuk menangani navigasi.
      */
@@ -204,7 +204,7 @@ class Router {
 
     /**
      * Menavigasi ke URL yang diberikan.
-     * 
+     *
      * @param {string} url - URL yang akan dinavigasi.
      */
     static navigate(url) {
@@ -213,7 +213,7 @@ class Router {
 
     /**
      * Menangani klik pada elemen dengan atribut `routerLink`.
-     * 
+     *
      * @private
      * @param {Event} event - Event klik yang ditangkap.
      */
@@ -227,7 +227,7 @@ class Router {
 
     /**
      * Memicu event kustom di window.
-     * 
+     *
      * @param {string} type - Tipe event yang akan dipicu.
      * @param {Object} detail - Detail dari event yang akan dikirimkan.
      */
@@ -242,7 +242,7 @@ class Router {
 
     /**
      * Inisialisasi router dengan daftar rute yang diberikan.
-     * 
+     *
      * @param {Array<Object>} routes - Daftar rute yang akan diinisialisasi.
      */
     static init(routes = []) {

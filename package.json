@@ -8,11 +8,14 @@
         "build:prod": "webpack --mode=production --node-env=production",
         "watch": "webpack --watch",
         "serve": "webpack serve",
-        "prettier": "npx prettier . --write"
+        "prettier": "npx prettier . --write",
+        "localize:extract": "lit-localize extract",
+        "localize:build": "lit-localize build"
     },
     "devDependencies": {
         "@babel/core": "^7.25.7",
         "@babel/preset-env": "^7.25.7",
+        "@lit/localize-tools": "^0.8.0",
         "autoprefixer": "^10.4.20",
         "babel-loader": "^9.2.1",
         "css-loader": "^7.1.2",
@@ -30,6 +33,7 @@
         "workbox-webpack-plugin": "^7.1.0"
     },
     "dependencies": {
+        "@lit/localize": "^0.12.2",
         "lit": "^3.2.0"
     }
 }

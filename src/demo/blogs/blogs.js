@@ -1,10 +1,11 @@
 import { html } from "lit";
 import { NDComponent } from "../../material/component/component";
+import { msg } from "@lit/localize";
 
 class DemoBlogs extends NDComponent {
     render() {
         return html`
-            <h1>Blogs</h1>
+            <h1>${msg("Blogs")}</h1>
             <nd-outlet></nd-outlet>
         `;
     }

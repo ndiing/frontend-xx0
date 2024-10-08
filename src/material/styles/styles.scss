@@ -1,0 +1,131 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+
+    &,
+    &::before,
+    &::after {
+        box-sizing: border-box;
+    }
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    overflow: auto;
+    font-size: var(--md-sys-typescale-body-large-size);
+    line-height: var(--md-sys-typescale-body-large-line-height);
+    font-weight: var(--md-sys-typescale-body-large-weight);
+    letter-spacing: var(--md-sys-typescale-body-large-tracking);
+    font-family: var(--md-sys-typescale-body-large-font);
+    background: var(--md-sys-color-background);
+    color: var(--md-sys-color-on-background);
+}
+
+/* layout */
+
+@mixin breakpoint-compact() {
+    @media (max-width: 599px) {
+        @content;
+    }
+}
+@mixin breakpoint-medium() {
+    @media (min-width: 600px) and (max-width: 839px) {
+        @content;
+    }
+}
+@mixin breakpoint-expanded() {
+    @media (min-width: 840px) {
+        @content;
+    }
+}
+
+/* border */
+.nd-border {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "north north north"
+        "west center east"
+        "south south south";
+    overflow: hidden;
+}
+.nd-border__item--north,
+.nd-border__item--east,
+.nd-border__item--south,
+.nd-border__item--west,
+.nd-border__item--center {
+    overflow: auto;
+}
+.nd-border__item--north {
+    grid-area: north;
+}
+.nd-border__item--east {
+    grid-area: east;
+}
+.nd-border__item--south {
+    grid-area: south;
+}
+.nd-border__item--west {
+    grid-area: west;
+}
+.nd-border__item--center {
+    grid-area: center;
+}
+
+/* grid */
+.nd-grid {
+    display: grid;
+    grid-template-columns: repeat(12, minmax(0, 1fr));
+    grid-gap: 24px;
+}
+.nd-grid__item {
+    grid-column-end: span 4;
+}
+
+@include breakpoint-compact() {
+    .nd-grid {
+        display: grid;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        grid-gap: 8px;
+    }
+    @for $i from 1 through 4 {
+        .nd-grid__item--compact#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include breakpoint-medium() {
+    .nd-grid {
+        display: grid;
+        grid-template-columns: repeat(8, minmax(0, 1fr));
+        grid-gap: 16px;
+    }
+    @for $i from 1 through 8 {
+        .nd-grid__item--medium#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}
+
+@include breakpoint-expanded() {
+    .nd-grid {
+        display: grid;
+        grid-template-columns: repeat(12, minmax(0, 1fr));
+        grid-gap: 24px;
+    }
+    @for $i from 1 through 12 {
+        .nd-grid__item--expanded#{$i} {
+            grid-column-end: span $i;
+        }
+    }
+}

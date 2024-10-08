@@ -4,17 +4,21 @@ import { NDComponent } from "../../material/component/component";
 class DemoMain extends NDComponent {
     render() {
         return html`
-            <h1>Main</h1>
-            <div>
-                <div routerLink="/">/</div>
-                <div routerLink="/users">/users</div>
-                <div routerLink="/users/1">/users/1</div>
-                <div routerLink="/blogs/">/blogs/</div>
-                <div routerLink="/blogs/1">/blogs/1</div>
-                <div routerLink="/error">/error</div>
+            <div class="nd-border">
+                <div class="md-border__item--west">
+                    <div>
+                        <div routerLink="/">/</div>
+                        <div routerLink="/users">/users</div>
+                        <div routerLink="/users/1">/users/1</div>
+                        <div routerLink="/blogs/">/blogs/</div>
+                        <div routerLink="/blogs/1">/blogs/1</div>
+                        <div routerLink="/error">/error</div>
+                    </div>
+                </div>
+                <div class="md-border__item--center">
+                    <nd-outlet></nd-outlet>
+                </div>
             </div>
-            <nd-outlet name="user"></nd-outlet>
-            <nd-outlet></nd-outlet>
         `;
     }
 }

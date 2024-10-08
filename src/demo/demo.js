@@ -29,7 +29,7 @@ Router.init([
                 path: "users",
                 load: DemoUsersLoad,
                 beforeLoad,
-                children: [{ path: ":id", load: DemoUserLoad, outlet: "user", children: [] }],
+                children: [{ path: ":id", load: DemoUserLoad, children: [] }],
             },
         ],
     },
